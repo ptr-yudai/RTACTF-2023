@@ -1,0 +1,9 @@
+id: Collision-DES
+name: Collision-DES
+category: crypto
+description: |
+  Is it possible to encrypt the same plaintext with completely different keys and get the same ciphertext?<br>
+  同じ平文をまったく異なる鍵で暗号化した結果が同じになることってあるんでしょうか。<br>
+est: 1200
+flag: RTACTF{}
+author: ptr-yudai

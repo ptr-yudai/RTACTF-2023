@@ -1,0 +1,9 @@
+id: Reused-AES
+name: Reused-AES
+category: crypto
+description: |
+  I re-use the key and IV to reduce waste.<br>
+  もったいないので鍵とIVは再利用しています。<br>
+est: 1200
+flag: RTACTF{}
+author: ptr-yudai

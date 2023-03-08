@@ -5,5 +5,6 @@ description: |
   Why does AES repeat the same operation 10 times? Why not once?<br>
   AESってなんで中で同じ処理10回も繰り返すんですか？1回で良くないすか？<br>
 est: 1800
+port: 7003
 flag: RTACTF{0000202206062148}
 author: ptr-yudai

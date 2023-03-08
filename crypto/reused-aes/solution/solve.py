@@ -1,7 +1,11 @@
 from ptrlib import *
+import os
+
+HOST = os.getenv("HOST", "localhost")
+PORT = int(os.getenv("PORT", "7001"))
 
 def encrypt(msg):
-    sock = Process(["python", "../distfiles/server.py"])
+    sock = Socket(HOST, PORT)
     a = bytes.fromhex(sock.recvline().decode())
     sock.sendlineafter("> ", msg)
     b = bytes.fromhex(sock.recvline().decode())

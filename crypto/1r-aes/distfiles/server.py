@@ -4,7 +4,7 @@ import os
 key = os.getenv("KEY", "*** REDACTED ***").encode()
 assert len(key) == 16
 
-flag = os.getenv("FLAG", "RTACTF{9876000000001234}") # Find me
+flag = os.getenv("FLAG", "RTACTF{0000000000000000}")
 assert flag.startswith("RTACTF{") and flag.endswith("}")
 la = flag[len("RTACTF{"):-len("}")]
 assert len(la) == 16 and la.isnumeric()

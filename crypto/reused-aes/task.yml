@@ -4,6 +4,7 @@ category: crypto
 description: |
   I re-use the key and IV to reduce waste.<br>
   もったいないので鍵とIVは再利用しています。<br>
-est: 1200
-flag: RTACTF{}
+est: 1000
+port: 7001
+flag: RTACTF{name_it_AES-SDGs}
 author: ptr-yudai

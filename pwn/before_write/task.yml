@@ -5,5 +5,6 @@ description: |
   Numb'r taken but not writ.<br>
   値は取れど書き込まず。<br>
 est: 300
+port: 9001
 flag: RTACTF{sizeof_is_a_bit_c0nfus1ng}
 author: ptr-yudai

@@ -5,5 +5,6 @@ description: |
   Is it possible to encrypt the same plaintext with completely different keys and get the same ciphertext?<br>
   同じ平文をまったく異なる鍵で暗号化した結果が同じになることってあるんでしょうか。<br>
 est: 1200
-flag: RTACTF{}
+port: 7002
+flag: RTACTF{The_keysize_of_DES_is_actually_56-bit}
 author: ptr-yudai

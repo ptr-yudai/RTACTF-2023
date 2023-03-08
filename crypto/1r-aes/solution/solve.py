@@ -1,7 +1,11 @@
 from ptrlib import *
 from aes import matrix2bytes, bytes2matrix, inv_shift_rows
+import os
 
-sock = Process(["python", "./server.py"])
+HOST = os.getenv("HOST", "localhost")
+PORT = int(os.getenv("PORT", "7003"))
+
+sock = Socket(HOST, PORT)
 
 flag_enc = bytes.fromhex(sock.recvlineafter("enc(la): ").decode())
 print("enc(flag):", flag_enc.hex())

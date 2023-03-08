@@ -28,7 +28,7 @@ RUN chmod 444 /flag.txt
 RUN mv /flag.txt /flag-$(md5sum /flag.txt | awk '{print $1}').txt
 
 WORKDIR /home/pwn
-ADD chall .
+ADD distfiles/chall .
 RUN chmod 550 chall
 
 RUN chown -R root:pwn /home/pwn

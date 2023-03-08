@@ -1,0 +1,9 @@
+id: read-write
+name: read-write
+category: pwn
+description: |
+  1 mor chance 2 write.<br>
+  もっかい書けます。<br>
+est: 900
+flag: RTACTF{r3m3mb3r_master_canaryyyyy...}
+author: ptr-yudai

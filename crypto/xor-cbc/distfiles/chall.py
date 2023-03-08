@@ -2,11 +2,10 @@ import os
 import struct
 
 FLAG = os.getenv("FLAG", "RTACTF{*** REDACTED ***}").encode()
-KEY = os.getenv("KEY", "nekoneko").encode()
-KEY_SIZE = 8
 assert FLAG.startswith(b"RTACTF{") and FLAG.endswith(b"}")
-assert len(KEY) == KEY_SIZE
 
+KEY_SIZE = 8
+KEY = os.urandom(KEY_SIZE)
 
 p64 = lambda x: struct.pack('<Q', x)
 u64 = lambda x: struct.unpack('<Q', x)[0]

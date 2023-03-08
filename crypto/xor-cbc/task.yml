@@ -2,7 +2,7 @@ id: XOR-CBC
 name: XOR-CBC
 category: crypto
 description: |
-  AES-CBC is secure right? Wait, do we really need AES-part?<br>
+  AES-CBC is secure right? Wait, do we really need the AES-part?<br>
   AES-CBCって安全ですよね。これもうAESの部分は要らないのでは？<br>
 est: 600
 flag: RTACTF{1_b0ugh7_4_b1k3_y3s73rd4y}

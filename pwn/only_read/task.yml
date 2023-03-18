@@ -4,7 +4,7 @@ category: pwn
 description: |
   Writoclasm of Byzantine<br>
   慶長の書込禁止令<br>
-est: 900
+est: 1800
 port: 9004
 flag: RTACTF{r3m3mb3r_m4st3r_canaryyyyyy......}
 author: ptr-yudai

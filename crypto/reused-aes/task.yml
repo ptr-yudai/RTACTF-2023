@@ -4,6 +4,7 @@ category: crypto
 description: |
   I re-use the key and IV to reduce waste.<br>
   もったいないので鍵とIVは再利用しています。<br>
+  <code>nc 35.194.118.87 7001</code>
 est: 1000
 port: 7001
 flag: RTACTF{name_it_AES-SDGs}

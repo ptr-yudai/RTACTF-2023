@@ -4,6 +4,7 @@ category: pwn
 description: |
   Oneshot.<br>
   一度きり。<br>
+  <code>nc 35.194.118.87 9002</code>
 est: 600
 port: 9002
 flag: RTACTF{__stack_chk_fail-is-s0m3t1m3s-useful}

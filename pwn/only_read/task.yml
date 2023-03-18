@@ -4,6 +4,9 @@ category: pwn
 description: |
   Writoclasm of Byzantine<br>
   慶長の書込禁止令<br>
+  <code>nc 35.194.118.87 9004</code><br>
+  <small>* Bruteforce up to 16-bit is allowed in this challenge.</small><br>
+  <small>* この問題では最大16-bit程度の総当り攻撃が許可されています。</small>
 est: 1800
 port: 9004
 flag: RTACTF{r3m3mb3r_m4st3r_canaryyyyyy......}

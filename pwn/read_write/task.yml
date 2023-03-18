@@ -4,6 +4,7 @@ category: pwn
 description: |
   Read or write, up to you.<br>
   読むか書くかはあなたの自由。<br>
+  <code>nc 35.194.118.87 9003</code>
 est: 900
 port: 9003
 flag: RTACTF{environ_to_stack......}

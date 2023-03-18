@@ -7,5 +7,5 @@ description: |
   <code>nc 35.194.118.87 9003</code>
 est: 720
 port: 9003
-flag: RTACTF{environ_to_stack......}
+flag: RTACTF{environ_to_stack...}
 author: ptr-yudai

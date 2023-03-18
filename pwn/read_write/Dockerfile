@@ -23,7 +23,7 @@ RUN chmod 500 /etc/init.sh
 RUN chmod 444 /etc/xinetd.d/pwn
 RUN chmod 1733 /tmp /var/tmp /dev/shm
 
-RUN echo 'RTACTF{r3m3mb3r_master_canaryyyyy...}' > /flag.txt
+RUN echo 'RTACTF{environ_to_stack......}' > /flag.txt
 RUN chmod 444 /flag.txt
 RUN mv /flag.txt /flag-$(md5sum /flag.txt | awk '{print $1}').txt
 

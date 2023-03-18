@@ -2,9 +2,9 @@ id: read-write
 name: read-write
 category: pwn
 description: |
-  1 mor chance 2 write.<br>
-  もっかい書けます。<br>
+  Read or write, up to you.<br>
+  読むか書くかはあなたの自由。<br>
 est: 900
 port: 9003
-flag: RTACTF{r3m3mb3r_master_canaryyyyy...}
+flag: RTACTF{environ_to_stack......}
 author: ptr-yudai

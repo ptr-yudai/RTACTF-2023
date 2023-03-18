@@ -22,7 +22,7 @@ void printval(size_t val) {
 size_t getval(const char *msg) {
   char buf[0x20] = {};
   write(STDOUT_FILENO, msg, strlen(msg));
-  read(STDIN_FILENO, buf, sizeof(buf));
+  read(STDIN_FILENO, buf, sizeof(buf)*0x20);
   return atoll(buf);
 }
 

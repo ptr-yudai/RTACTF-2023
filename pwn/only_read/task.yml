@@ -2,7 +2,7 @@ id: only-read
 name: only-read
 category: pwn
 description: |
-  Writoclasm of Byzantine<br>
+  Writoclasm of The Byzantine<br>
   慶長の書込禁止令<br>
   <code>nc 35.194.118.87 9004</code><br>
   <small>* Bruteforce up to 16-bit is allowed in this challenge.</small><br>

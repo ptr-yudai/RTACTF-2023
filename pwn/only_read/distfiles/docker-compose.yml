@@ -6,6 +6,6 @@ services:
       nproc: 65535
       core: 0
     ports:
-      - "9003:9999"
+      - "9004:9999"
     entrypoint: /etc/init.sh
     restart: always

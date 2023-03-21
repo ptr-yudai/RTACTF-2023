@@ -4,10 +4,10 @@ import os
 key = os.getenv("KEY", "*** REDACTED ***").encode()
 assert len(key) == 16
 
-flag = os.getenv("FLAG", "RTACTF{0000000000000000}")
+flag = os.getenv("FLAG", "RTACTF{*** REDACTED ***}")
 assert flag.startswith("RTACTF{") and flag.endswith("}")
 la = flag[len("RTACTF{"):-len("}")]
-assert len(la) == 16 and la.isnumeric()
+assert len(la) == 16
 
 cipher = aes.AES(key)
 print("enc(la):", cipher.encrypt_block(la.encode()).hex())

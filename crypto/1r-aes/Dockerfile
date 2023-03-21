@@ -27,7 +27,7 @@ WORKDIR /home/ctf
 ADD distfiles/server.py .
 ADD distfiles/aes.py .
 RUN echo '#!/bin/bash\n\
-KEY=wani_no_oishasan FLAG=RTACTF{0000202206062148} python /home/ctf/server.py' > server.sh
+KEY=wani_no_oishasan FLAG=RTACTF{MixColumnIsMust!} python /home/ctf/server.py' > server.sh
 RUN chmod +440 server.py
 RUN chmod +440 aes.py
 RUN chmod +555 server.sh

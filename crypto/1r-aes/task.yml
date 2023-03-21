@@ -5,7 +5,7 @@ description: |
   Why does AES repeat the same operation 10 times? Why not once?<br>
   AESってなんで中で同じ処理10回も繰り返すんですか？1回で良くないすか？<br>
   <code>nc 35.194.118.87 7003</code>
-est: 1200
+est: 1320
 port: 7003
-flag: RTACTF{0000202206062148}
+flag: "RTACTF{MixColumnIsMust!}"
 author: ptr-yudai

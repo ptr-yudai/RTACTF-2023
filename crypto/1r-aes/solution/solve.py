@@ -5,8 +5,8 @@ import os
 HOST = os.getenv("HOST", "localhost")
 PORT = int(os.getenv("PORT", "7003"))
 
-#sock = Socket(HOST, PORT)
-sock = Process(["python", "../distfiles/server.py"])
+sock = Socket(HOST, PORT)
+#sock = Process(["python", "../distfiles/server.py"])
 
 flag_enc = bytes.fromhex(sock.recvlineafter("enc(la): ").decode())
 print("enc(flag):", flag_enc.hex())
